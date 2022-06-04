@@ -28,7 +28,7 @@ namespace PO_20222021_app.Data
             {
                 if (sqlConnection != null)
                 {
-                    if (sqlConnection.State == ConnectionState.Open)
+                    if (sqlConnection.State != ConnectionState.Closed)
                     {
                         sqlConnection.Close();
                     }
