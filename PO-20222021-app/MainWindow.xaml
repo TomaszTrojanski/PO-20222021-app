@@ -9,5 +9,6 @@
         Height="450" 
         Width="800">
     <Grid>
+        <view
     </Grid>
 </Window>

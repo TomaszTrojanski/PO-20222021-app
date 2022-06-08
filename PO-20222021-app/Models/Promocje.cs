@@ -19,5 +19,14 @@ namespace PO_20222021_app.Modele
             StartTime = startTime;
             EndTime = endTime;
         }
+
+        internal bool Conflicts(Promocje promocje)
+        {
+            if(promocje.PromotorID != PromotorID)
+            {
+                return false;
+            }
+            return promocje.StartTime < EndTime || promocje.EndTime > promocje.StartTime;
+        }
     }
 }
