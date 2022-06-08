@@ -8,11 +8,23 @@ namespace PO_20222021_app.Modele
 {
     public class Wspolprace
     {
-        private readonly Dictionary<PromotorID, List<Wspolprace>> _akcjePromocyjne;
+        private readonly List<Wspolprace> _promocje;
         
         public Wspolprace()
         {
-            _akcjePromocyjne = new Dictionary<PromotorID, List<Wspolprace>>();
+            _promocje = new List<Wspolprace>();
+        }
+        public IEnumerable<Promocje> GetAkcjePromocyjneForUser(string username)
+        {
+            return _promocje.Where(r => r.Username == username);
+        }
+        public void AddAkcje(Promocje promocje)
+        {
+            foreach(Promocje existingPromocje in _promocje)
+            {
+                if(existingPromocje)
+            }
+            _promocje.Add(promocje);
         }
     }
 }
