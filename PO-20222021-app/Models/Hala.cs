@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PO_20222021_app.Exeptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,18 +13,19 @@ namespace PO_20222021_app.Modele
 
         public string Name { get; set; }
 
-        public Hala()
+        public Hala(string name, Wspolprace wspolprace)
         {
-            Name = Name;
-            _wspolprace = new Wspolprace();
+            Name = name;
+            _wspolprace = wspolprace;
         }
-        public IEnumerable<Promocje> GetPromocjeForUser(string username)
+        public async Task<IEnumerable<Promocje>> GetAllPromocje()
         {
-            return _wspolprace.GetPromocjeForUser(username);
+            return await _wspolprace.GetAllPromocje();
         }
-        public void MakePromocje(Promocje promocje)
+        
+        public async Task MakePromocje(Promocje promocje)
         {
-            _wspolprace.AddPromocje(promocje);
+            await _wspolprace.AddPromocje(promocje);
         }
         
     }

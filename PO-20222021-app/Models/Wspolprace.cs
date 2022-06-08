@@ -9,25 +9,34 @@ namespace PO_20222021_app.Modele
 {
     public class Wspolprace
     {
-        private readonly List<Wspolprace> _promocje;
+        private readonly IPromocjeProvider _promocjeProvider;
+        private readonly IPromocjeCreator _promocjeCreator;
+        private readonly IPromocjeConflictValidators _promocjeConflictValidators;
         
-        public Wspolprace()
+        public Wspolprace(IPromocjeProvider promocjeProvider, IPromocjeCreator promocjeCreator, IPromocjeConflictValidators promocjeConflictValidators)
         {
-            _promocje = new List<Wspolprace>();
+            _promocjeProvider = promocjeProvider;
+            _promocjeCreator = promocjeCreator;
+            _promocjeConflictValidators = promocjeConflictValidators;
         }
-        public IEnumerable<Promocje> GetPromocjeForUser(string username)
+        public async Task<IEnumerable<Promocje>> GetAllPromocje()
         {
-            return _promocje.Where(r => r.Username== username);
+            return await _promocjeProvider.GetAllPromocje();
         }
-        public void AddPromocje(Promocje promocje)
+        public async Task AddPromocje(Promocje promocje)
         {
-            foreach (Promocje existingPromocje in _promocje) {
-                if (existingPromocje.Conflicts(promocje))
-                {
-                    throw new PromocjeConflictException(existingPromocje, promocje);
-                }
+            if (promocje.StartTime > promocje.EndTime)
+            {
+                throw new InvalidPromocjeTimeRangeException(promocje);
             }
-            _promocje.Add(promocje);
+            Promocje conflictingPromocje = await _promocjeConflictValidators.GetConflictingPromocje(promocje);
+
+            if (conflictingPromocje != null)
+            {
+                throw new PromocjeConflictException(conflictingPromocje, promocje);
+            }
+            await _promocjeCreator.CreatePromocje(promocje);
         }
+        
     }
 }
