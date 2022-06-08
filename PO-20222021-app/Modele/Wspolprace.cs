@@ -8,6 +8,11 @@ namespace PO_20222021_app.Modele
 {
     public class Wspolprace
     {
-        private readonly Lista<PromotorID, List
+        private readonly Dictionary<PromotorID, List<Wspolprace>> _akcjePromocyjne;
+        
+        public Wspolprace()
+        {
+            _akcjePromocyjne = new Dictionary<PromotorID, List<Wspolprace>>();
+        }
     }
 }

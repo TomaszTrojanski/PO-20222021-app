@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace PO_20222021_app.Modele
 {
-    internal class AkcjePromocyjne
+    public class AkcjePromocyjne
     {
+        public PromotorID PromotorID { get; }
+        public DateTime StartTime { get; }
+        public DateTime EndTime { get; }
+        public TimeSpan Lenght => EndTime.Subtract(StartTime);
+        public AkcjePromocyjne(PromotorID promotorID, DateTime startTime, DateTime endTime)
+        {
+            PromotorID = promotorID;
+            StartTime = startTime;
+            EndTime = endTime;
+        }
     }
 }

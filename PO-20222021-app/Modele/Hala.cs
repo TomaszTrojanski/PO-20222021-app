@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PO_20222021_app.Modele
 {
-    internal class Hala
+    public class Hala
     {
         private readonly Wspolprace wspolprace;
 
