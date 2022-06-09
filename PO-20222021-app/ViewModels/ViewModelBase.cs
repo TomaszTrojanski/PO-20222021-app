@@ -11,6 +11,19 @@ namespace PO_20222021_app.ViewModels
     {
         public event PropertyChangingEventHandler PropertyChanged;
 
+        event PropertyChangedEventHandler? INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangingEventArgs(propertyName));

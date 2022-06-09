@@ -44,27 +44,16 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" SharedSizeGroup="FirstColumn" />
                 <ColumnDefinition Width="auto" SharedSizeGroup="SecondColumn" />
-                <ColumnDefinition Width="auto" SharedSizeGroup="TherdColumn" />
             </Grid.ColumnDefinitions>
 
             <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
-                Text="ID" />
-            <TextBox
-                Grid.Row="1"
-                Grid.Column="0"
-                Margin="0 5 0 0"
-                Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" />
-
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="1"
                 Margin="10 0 0 0"
                 Text="Imie" />
             <TextBox
                 Grid.Row="1"
-                Grid.Column="1"
+                Grid.Column="0"
                 Margin="10 5 0 0"
                 Text="{Binding Imie, UpdateSourceTrigger=PropertyChanged}" />
 
