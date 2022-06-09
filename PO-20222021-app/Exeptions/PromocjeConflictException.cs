@@ -1,10 +1,5 @@
 ﻿using PO_20222021_app.Modele;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PO_20222021_app.Exeptions
 {
@@ -24,7 +19,8 @@ namespace PO_20222021_app.Exeptions
             ExistingPromocje = existingPromocje;
             IncomingPromocje = incomingPromocje;
         }
-        public PromocjeConflictException(string message,Exception innerException, Promocje existingPromocje, Promocje incomingPromocje) : base(message, innerException)
+
+        public PromocjeConflictException(string message, Exception innerException, Promocje existingPromocje, Promocje incomingPromocje) : base(message, innerException)
         {
             ExistingPromocje = existingPromocje;
             IncomingPromocje = incomingPromocje;

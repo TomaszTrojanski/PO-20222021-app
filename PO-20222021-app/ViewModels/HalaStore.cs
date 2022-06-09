@@ -1,10 +1,7 @@
 ﻿using PO_20222021_app.Modele;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-
 
 namespace PO_20222021_app.ViewModels
 {
@@ -15,6 +12,7 @@ namespace PO_20222021_app.ViewModels
         private Lazy<Task> _initializeLazy;
 
         public IEnumerable<Promocje> Promocjes => _promocje;
+
         public event Action<Promocje> PromocjeMade;
 
         public HalaStore(Hala hala)
@@ -23,6 +21,7 @@ namespace PO_20222021_app.ViewModels
             _initializeLazy = new Lazy<Task>(Initialize);
             _promocje = new List<Promocje>();
         }
+
         public async Task Load()
         {
             try
@@ -35,16 +34,19 @@ namespace PO_20222021_app.ViewModels
                 throw;
             }
         }
+
         public async Task MakePromocje(Promocje promocje)
         {
             await _hala.MakePromocje(promocje);
             _promocje.Add(promocje);
             OnPromocjeMade(promocje);
         }
+
         private void OnPromocjeMade(Promocje promocje)
         {
             PromocjeMade?.Invoke(promocje);
         }
+
         private async Task Initialize()
         {
             IEnumerable<Promocje> promocjes = await _hala.GetAllPromocje();

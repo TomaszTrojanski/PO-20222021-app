@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PO_20222021_app.ViewModels
@@ -12,6 +10,7 @@ namespace PO_20222021_app.ViewModels
     public class MakePromocjeViewModel : ViewModelBase, INotifyDataErrorInfo
     {
         private string _username;
+
         public string Username
         {
             get
@@ -35,6 +34,7 @@ namespace PO_20222021_app.ViewModels
         }
 
         private int _floorNumber = 1;
+
         public int FloorNumber
         {
             get
@@ -58,6 +58,7 @@ namespace PO_20222021_app.ViewModels
         }
 
         private int _roomNumber;
+
         public int RoomNumber
         {
             get
@@ -72,6 +73,7 @@ namespace PO_20222021_app.ViewModels
         }
 
         private DateTime _startDate = new DateTime(2021, 1, 1);
+
         public DateTime StartDate
         {
             get
@@ -96,6 +98,7 @@ namespace PO_20222021_app.ViewModels
         }
 
         private DateTime _endDate = new DateTime(2021, 1, 8);
+
         public DateTime EndDate
         {
             get
@@ -130,6 +133,7 @@ namespace PO_20222021_app.ViewModels
         private bool HasStartDateBeforeEndDate => StartDate < EndDate;
 
         private string _submitErrorMessage;
+
         public string SubmitErrorMessage
         {
             get
@@ -148,6 +152,7 @@ namespace PO_20222021_app.ViewModels
         public bool HasSubmitErrorMessage => !string.IsNullOrEmpty(SubmitErrorMessage);
 
         private bool _isSubmitting;
+
         public bool IsSubmitting
         {
             get

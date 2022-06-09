@@ -1,14 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PO_20222021_app.ViewModels;
-using PO_20222021_app.Exeptions;
-using PO_20222021_app.Modele;
-using PO_20222021_app.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PO_20222021_app
 {
@@ -20,7 +13,6 @@ namespace PO_20222021_app
             {
                 services.AddTransient((s) => CreateReservationListingViewModel(s));
                 services.AddSingleton<Func<PromocjeListingViewModel>>((s) => () => s.GetRequiredService<PromocjeListingViewModel>());
-
 
                 services.AddTransient<MakePromocjeViewModel>();
                 services.AddSingleton<Func<MakePromocjeViewModel>>((s) => () => s.GetRequiredService<MakePromocjeViewModel>());

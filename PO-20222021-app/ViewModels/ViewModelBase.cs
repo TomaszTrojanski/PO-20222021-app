@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 
 namespace PO_20222021_app.ViewModels
@@ -28,7 +24,8 @@ namespace PO_20222021_app.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangingEventArgs(propertyName));
         }
-        public virtual void Dispose() { }
 
+        public virtual void Dispose()
+        { }
     }
 }

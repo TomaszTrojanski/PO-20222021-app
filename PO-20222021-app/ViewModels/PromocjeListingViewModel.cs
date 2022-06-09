@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace PO_20222021_app.ViewModels
 {
@@ -24,7 +19,7 @@ namespace PO_20222021_app.ViewModels
         {
             throw new NotImplementedException();
         }
-        //public bool HasPromocje => _promocjes;
 
+        //public bool HasPromocje => _promocjes;
     }
 }

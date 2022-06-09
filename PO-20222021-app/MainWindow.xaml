@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PO_20222021_app" xmlns:views="clr-namespace:PO_20222021_app.Views"
         mc:Ignorable="d"
-        Title="PromoApp" 
-        Height="450" 
+        Title="PromoApp"
+        Height="450"
         Width="800"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
     <Grid>
-        <views:MakePromocjeView/>
+        <views:MakePromocjeView />
     </Grid>
 </Window>

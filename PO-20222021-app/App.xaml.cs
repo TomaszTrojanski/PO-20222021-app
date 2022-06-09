@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using PO_20222021_app.Modele;
-using PO_20222021_app.ViewModels;
+﻿using Microsoft.Extensions.Hosting;
 using System.Windows;
 
 namespace PO_20222021_app
@@ -14,7 +9,9 @@ namespace PO_20222021_app
     public partial class App : Application
     {
         private readonly IHost _host;
-        public App(){
+
+        public App()
+        {
             _host = Host.CreateDefaultBuilder()
                 .AddViewModels()
                 //.ConfigureServices((hostContext, services) =>
