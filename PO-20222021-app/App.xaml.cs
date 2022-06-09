@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿
+using System.Windows;
 
 namespace PO_20222021_app
 {
@@ -7,6 +8,34 @@ namespace PO_20222021_app
     /// </summary>
     public partial class App : Application
     {
+        private readonly IContentHost _host;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

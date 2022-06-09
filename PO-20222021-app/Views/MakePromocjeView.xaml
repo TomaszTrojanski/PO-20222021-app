@@ -66,7 +66,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="10 5 0 0"
-                Text="{Binding RoomNumber, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Imie, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="0"
