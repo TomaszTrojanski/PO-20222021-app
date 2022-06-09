@@ -8,16 +8,16 @@ namespace PO_20222021_app.Modele
 {
     public class PromotorID
     {
+
+        public int ID { get; }
+        public string Imie { get; }
+        public string Nazwisko { get; }
         public PromotorID(int iD, string imie, string nazwisko)
         {
             ID = iD;
             Imie = imie;
             Nazwisko = nazwisko;
         }
-
-        public int ID { get; }
-        public string Imie { get; }
-        public string Nazwisko { get; }
 
         public override string ToString()
         {
