@@ -175,13 +175,13 @@ namespace PO_20222021_app.ViewModels
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
-        //public MakePromocjeViewModel(HalaStore halaStore, NavigationService<PromocjeListingViewModel> reservationViewNavigationService)
-        //{
-        //    SubmitCommand = new MakePromocjeCommand(this, hotelStore, reservationViewNavigationService);
-        //    CancelCommand = new NavigateCommand<PromocjeListingViewModel>(reservationViewNavigationService);
+        public MakePromocjeViewModel(HalaStore halaStore, NavigationService<PromocjeListingViewModel> promocjeViewNavigationService)
+        {
+            //SubmitCommand = new MakePromocjeCommand(this, hotelStore, reservationViewNavigationService);
+            //CancelCommand = new NavigateCommand<PromocjeListingViewModel>(reservationViewNavigationService);
 
-        //    _propertyNameToErrorsDictionary = new Dictionary<string, List<string>>();
-        //}
+            //_propertyNameToErrorsDictionary = new Dictionary<string, List<string>>();
+        }
 
         public IEnumerable GetErrors(string propertyName)
         {
