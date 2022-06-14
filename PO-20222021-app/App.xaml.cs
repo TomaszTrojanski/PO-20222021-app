@@ -16,22 +16,22 @@ namespace PO_20222021_app
                 .AddViewModels()
                 .ConfigureServices((hostContext, services) =>
                 {
-                    string connectionString = hostContext.Configuration.GetConnectionString("Default");
-                    services.AddSingleton<IPromocjeProvider, DatabasePromocjeProvider>();
-                    services.AddSingleton<IPromocjeCreator, DatabasePromocjeCreator>();
-                    services.AddSingleton<IPromocjeConflictValidators, DatabasePromocjeConflictValidator>();
+                    //string connectionString = hostContext.Configuration.GetConnectionString("Default");
+                    //services.AddSingleton<IPromocjeProvider, DatabasePromocjeProvider>();
+                    //services.AddSingleton<IPromocjeCreator, DatabasePromocjeCreator>();
+                    //services.AddSingleton<IPromocjeConflictValidators, DatabasePromocjeConflictValidator>();
 
-                    services.AddTransient<PromocjaBook>();
+                    //services.AddTransient<PromocjaBook>();
 
-                    string halaName = hostContext.Configuration.GetValue<string>("HalaName");
-                    services.AddSingleton((s) => new Hala(halaName, s.GetRequiredService<Wspolprace>()));
+                    //string halaName = hostContext.Configuration.GetValue<string>("HalaName");
+                    //services.AddSingleton((s) => new Hala(halaName, s.GetRequiredService<Wspolprace>()));
 
-                    services.AddSingleton<HalaStore>();
+                    //services.AddSingleton<HalaStore>();
 
-                    services.AddSingleton(s => new MainWindow()
-                    {
-                        DataContext = s.GetRequiredService<MainViewModel>()
-                    });
+                    //services.AddSingleton(s => new MainWindow()
+                    //{
+                    //    DataContext = s.GetRequiredService<MainViewModel>()
+                    //});
                 })
                 .Build();
         }

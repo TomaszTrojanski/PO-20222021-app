@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PO_20222021_app.Stores
 {
-    public class NavigationStores
+    public class NavigationStore
     {
         private ViewModelBase _currentViewModel;
         public ViewModelBase CurrentViewModel
