@@ -9,9 +9,12 @@
         Height="450"
         Width="800"
         ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="False">
     <Grid>
-        <views:MakePromocjeView />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="279*"/>
+        </Grid.ColumnDefinitions>
+        <views:MakePromocjeView Grid.ColumnSpan="2" />
     </Grid>
 </Window>

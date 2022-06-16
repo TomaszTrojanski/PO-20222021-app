@@ -7,7 +7,7 @@ namespace PO_20222021_app.Modele
     {
         private readonly Wspolprace _wspolprace;
 
-        public string Name { get; set; }
+        public string Name { get; }
 
         public Hala(string name, Wspolprace wspolprace)
         {
